@@ -2,11 +2,11 @@ import * as React from 'react';
 
 const { navigation } = require('./navigation.scss');
 
-interface PropsProps {
+export interface NavigationProps {
   applicationTitle: string;
 }
 
-export class NavigationComponent extends React.Component<PropsProps, void> {
+export class NavigationComponent extends React.Component<NavigationProps, void> {
   render() {
     const {applicationTitle} = this.props;
 
