@@ -1,0 +1,22 @@
+{
+  "transform": {
+    ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+  },
+  "testRegex": "(/test/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+  "moduleFileExtensions": [
+    "ts",
+    "tsx",
+    "js"
+  ],
+  "testResultsProcessor": "<rootDir>/config/jest/jest-result-processors",
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "app/src/**/*.{ts,tsx}",
+    "!app/**/*.selectors.ts"
+  ],
+  "coverageReporters": [
+    "html",
+    "json"
+  ],
+  "coverageDirectory": "<rootDir>/test-results/coverage"
+}
