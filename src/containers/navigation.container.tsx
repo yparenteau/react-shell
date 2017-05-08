@@ -21,5 +21,4 @@ const mapStateToProps = (state: {application: ApplicationState}): Partial<{}> =>
 const mapDispatchToProps = {
 };
 
-const NavigationContainer = connect(mapStateToProps, mapDispatchToProps)(Navigation);
-export default NavigationContainer;
+export const NavigationContainer = connect(mapStateToProps, mapDispatchToProps)(Navigation);

@@ -11,8 +11,8 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.join(process.cwd(), './dist'),
-    filename: 'shell.js',
-    library: 'shell',
+    filename: 'bny-shell.js',
+    library: 'bny-shell',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },

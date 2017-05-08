@@ -1,9 +1,10 @@
 {
-  "name": "",
-  "version": "0.0.0",
+  "name": "bny-shell",
+  "version": "0.0.1",
   "license": "",
   "description": "",
-  "main": "dist/shell.js",
+  "main": "dist/bny-shell.js",
+  "types": "./dist/types/src/index.d.ts",
   "scripts": {
     "start": "set NODE_ENV=development&&webpack-dev-server --config ./config/webpack/webpack.config.dev.js",
     "build": "set NODE_ENV=production&&webpack --config ./config/webpack/webpack.config.prod.js"
@@ -62,6 +63,10 @@
     "redux": "^3.0.0",
     "react-redux": "^4.0.0"
   },
+  "files": [
+    "dist",
+    "src"
+  ],
   "jest": {
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"

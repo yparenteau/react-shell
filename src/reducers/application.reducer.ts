@@ -23,7 +23,7 @@ const INITIAL_STATE: ApplicationState = {
   allId: ['dbvx', 'chailly']
 };
 
-export default function applicationReducer(state: ApplicationState = INITIAL_STATE, action: any): ApplicationState {
+export function applicationReducer(state: ApplicationState = INITIAL_STATE, action: any): ApplicationState {
   switch (action.type) {
     default:
       return state;

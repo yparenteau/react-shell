@@ -1,8 +1,8 @@
-const navigationActionTypes = {
+export const navigationActionTypes = {
   NAVIGATE_TO_APPLICATION: 'CHANGE_APPLICATION'
 };
 
-const navigateToApplication = () => ({
+export const navigateToApplication = () => ({
   type: navigationActionTypes.NAVIGATE_TO_APPLICATION
 });
 

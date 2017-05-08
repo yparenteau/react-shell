@@ -7,7 +7,7 @@ import rootReducer from './reducers';
 
 import './main.scss';
 import { Provider } from 'react-redux';
-import NavigationContainer from '../src/containers/navigation.container';
+import { NavigationContainer } from '../src/containers/navigation.container';
 
 ES6Promise.polyfill();
 
