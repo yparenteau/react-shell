@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const Visualizer = require('webpack-visualizer-plugin');
 
 const common = require('./webpack.common');
 
@@ -14,6 +15,12 @@ module.exports = {
     library: 'shell',
     libraryTarget: 'umd',
     umdNamedDefine: true
+  },
+  externals : {
+    react: 'react',
+    'react-dom': 'react-dom',
+    'react-redux': 'react-redux',
+    'redux': 'redux',
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js"]
@@ -51,7 +58,10 @@ module.exports = {
       },
 
     }),
-    new StyleLintPlugin()
+    new StyleLintPlugin(),
+    new Visualizer({
+      filename: './visualizer.html'
+    })
   ],
   module: {
     rules: [
