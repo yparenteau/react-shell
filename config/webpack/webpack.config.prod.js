@@ -38,9 +38,7 @@ module.exports = {
       mainFolder: 'dist/src',
       mainFile: 'index.d.ts',
       out: '../index.d.ts',
-      removeSource: true,
-      removeSourceFolder: true,
-      outputAsModuleFolder: true
+      removeSource: true
     }),
 
     new webpack.optimize.UglifyJsPlugin({

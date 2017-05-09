@@ -1,6 +1,6 @@
 const dts = require('dts-bundle');
 const path = require('path');
-const rimraf = require('rimraf');
+const deleteEmpty = require('delete-empty');
 const fs = require('fs');
 
 const defaultOptions ={
@@ -9,7 +9,6 @@ const defaultOptions ={
   mainFile: 'index.d.ts',
   out: '../index.d.ts',
   removeSource: false,
-  removeSourceFolder: false,
   outputAsModuleFolder: true
 };
 
@@ -29,8 +28,8 @@ DtsBundlerWebpackPlugin.prototype.apply = function (compiler) {
     const outputFile = path.join(self.options.mainFolder, self.options.out);
 
     self.addModuleDeclaration(outputFile, self.options.name, () => {
-      if (self.options.removeSourceFolder) {
-        return rimraf(inputFolder, callback);
+      if (self.options.removeSource) {
+        return deleteEmpty(inputFolder, callback);
       }
 
       callback();
