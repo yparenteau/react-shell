@@ -1,17 +1,17 @@
 import * as React from 'react';
 
-const { navigation } = require('./navigation.scss');
+const { shellHeader } = require('./shell-header.scss');
 
-export interface NavigationProps {
+export interface ShellHeaderProps {
   applicationTitle: string;
 }
 
-export class NavigationComponent extends React.Component<NavigationProps, void> {
+export class ShellHeaderComponent extends React.Component<ShellHeaderProps, void> {
   render() {
     const {applicationTitle} = this.props;
 
     return (
-      <header className={navigation}>
+      <header className={shellHeader}>
         <div className="application">{applicationTitle}</div>
       </header>
     );

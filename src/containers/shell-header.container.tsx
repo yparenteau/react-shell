@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { NavigationComponent } from '../components/navigation.component';
+import { ShellHeaderComponent } from '../components/shell-header.component';
 import { Application } from '../models/application.model';
 import { ApplicationState } from '../reducers/application.reducer';
 
@@ -11,7 +11,7 @@ interface NavigationProps {
 const Navigation: React.StatelessComponent<NavigationProps> = props => {
   const {title} = props.currentApplication;
 
-  return (<NavigationComponent applicationTitle={title} />);
+  return (<ShellHeaderComponent applicationTitle={title} />);
 };
 
 const mapStateToProps = (state: {application: ApplicationState}): Partial<{}> => ({
@@ -21,4 +21,4 @@ const mapStateToProps = (state: {application: ApplicationState}): Partial<{}> =>
 const mapDispatchToProps = {
 };
 
-export const NavigationContainer = connect(mapStateToProps, mapDispatchToProps)(Navigation);
+export const ShellHeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Navigation);
