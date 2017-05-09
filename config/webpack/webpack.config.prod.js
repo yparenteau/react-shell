@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const Visualizer = require('webpack-visualizer-plugin');
+const DtsBundlerPlugin = require('./dts-bundle.webpack-plugin');
 
 const common = require('./webpack.common');
 
@@ -32,6 +33,16 @@ module.exports = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
+    new DtsBundlerPlugin({
+      name: 'bny-shell',
+      mainFolder: 'dist/src',
+      mainFile: 'index.d.ts',
+      out: '../index.d.ts',
+      removeSource: true,
+      removeSourceFolder: true,
+      outputAsModuleFolder: true
+    }),
+
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
@@ -65,7 +76,16 @@ module.exports = {
   ],
   module: {
     rules: [
-      ...common.rules
+      ...common.rules,
+      {
+        test: /\.ts(x?)$/,
+        use: [
+          {
+            loader: 'awesome-typescript-loader?configFileName=tsconfig.prod.json',
+          }
+        ],
+        exclude: path.join(process.cwd(), './node_modules')
+      },
     ]
   }
 };

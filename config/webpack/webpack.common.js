@@ -19,15 +19,6 @@ module.exports = {
       exclude: [/node_modules/]
     },
     {
-      test: /\.ts(x?)$/,
-      use: [
-        {
-          loader: 'awesome-typescript-loader'
-        }
-      ],
-      exclude: path.join(process.cwd(), './node_modules')
-    },
-    {
       test: /\.scss/,
       exclude: [/node_modules/],
       use: ExtractTextPlugin.extract({
@@ -63,7 +54,7 @@ module.exports = {
     }
   ],
   plugins: [
-    new ExtractTextPlugin({ filename: 'style.css', disable: process.env.NODE_ENV !== 'production', allChunks: true }),
+    new ExtractTextPlugin({ filename: 'bny-shell.css', disable: process.env.NODE_ENV !== 'production', allChunks: true }),
     new StyleLintPlugin()
   ]
 };

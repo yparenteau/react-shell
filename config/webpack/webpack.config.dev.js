@@ -37,7 +37,16 @@ module.exports = {
   ],
   module: {
     rules: [
-      ...common.rules
+      ...common.rules,
+      {
+        test: /\.ts(x?)$/,
+        use: [
+          {
+            loader: 'awesome-typescript-loader',
+          }
+        ],
+        exclude: path.join(process.cwd(), './node_modules')
+      },
     ]
   }
 };
