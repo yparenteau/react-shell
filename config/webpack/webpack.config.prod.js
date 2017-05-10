@@ -12,8 +12,8 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     path: path.join(process.cwd(), './dist'),
-    filename: 'bny-shell.js',
-    library: 'bny-shell',
+    filename: 'bnym-shell.js',
+    library: 'bnym-shell',
     libraryTarget: 'umd',
     umdNamedDefine: true
   },
@@ -35,7 +35,7 @@ module.exports = {
       }
     }),
     new DtsBundlerPlugin({
-      name: 'bny-shell',
+      name: 'bnym-shell',
       mainFolder: 'dist/src',
       mainFile: 'index.d.ts',
       out: '../index.d.ts',

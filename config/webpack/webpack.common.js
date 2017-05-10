@@ -54,7 +54,7 @@ module.exports = {
     }
   ],
   plugins: [
-    new ExtractTextPlugin({ filename: 'bny-shell.css', disable: process.env.NODE_ENV !== 'production', allChunks: true }),
+    new ExtractTextPlugin({ filename: 'bnym-shell.css', disable: process.env.NODE_ENV !== 'production', allChunks: true }),
     new StyleLintPlugin()
   ]
 };

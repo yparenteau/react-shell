@@ -1,9 +1,9 @@
 {
-  "name": "bny-shell",
+  "name": "bnym-shell",
   "version": "0.0.1",
   "license": "",
   "description": "",
-  "main": "dist/bny-shell.js",
+  "main": "dist/bnym-shell.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "start": "set NODE_ENV=development&&webpack-dev-server --config ./config/webpack/webpack.config.dev.js",
@@ -67,7 +67,7 @@
     "react-redux": "^4.0.0"
   },
   "files": [
-    "dist/bny-shell.*",
+    "dist/bnym-shell.*",
     "dist/index.d.ts",
     "src"
   ],
