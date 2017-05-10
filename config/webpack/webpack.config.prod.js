@@ -18,6 +18,7 @@ module.exports = {
     umdNamedDefine: true
   },
   externals : {
+    classnames: 'classnames',
     react: 'react',
     'react-dom': 'react-dom',
     'react-redux': 'react-redux',

@@ -33,15 +33,15 @@ module.exports = {
             }
           },
           {
-            loader: 'sass-loader',
-            query: {
-              sourceMap: true
-            }
-          },
-          {
             loader: 'postcss-loader',
             options: {
               plugins: () => [autoprefixer('last 2 versions', 'ie 11')]
+            }
+          },
+          {
+            loader: 'sass-loader',
+            query: {
+              sourceMap: true
             }
           }
         ]
@@ -51,6 +51,24 @@ module.exports = {
       test: /\.(png|jpg)$/,
       use: 'url-loader?limit=15000',
       exclude: [/node_modules/]
+    },
+    {
+      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            limit: 10000,
+            mimetype: 'application/font-woff'
+          }
+        }
+      ]
+    },
+    {
+      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+      use: [
+        { loader: 'file-loader' }
+      ]
     }
   ],
   plugins: [
