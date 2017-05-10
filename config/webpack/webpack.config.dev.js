@@ -11,7 +11,7 @@ module.exports = {
   entry: './example/index.tsx',
   devServer: {
     contentBase: path.join(process.cwd(), './src'),
-    port: 3001,
+    port: 3000,
     historyApiFallback: true,
     stats: {
       colors: true,
