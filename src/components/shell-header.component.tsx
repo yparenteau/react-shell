@@ -18,9 +18,7 @@ export class ShellHeaderComponent extends React.Component<ShellHeaderProps, void
         <div className={classNames(styles.applicationTitle, 'shell-application-title')}>{applicationTitle}</div>
         <div className={classNames(styles.loggedInfo, 'shell-application-info')}>
           <span>Signed is as John Doe</span>
-          <button className={classNames(styles.btnSignOut, 'shell-button-sign-out')}>
-            <i className="fa fa-sign-out" />
-          </button>
+          <button className={classNames(styles.btnSignOut, 'shell-button-sign-out')}></button>
         </div>
       </header>
     );
