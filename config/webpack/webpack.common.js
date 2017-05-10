@@ -48,27 +48,9 @@ module.exports = {
       })
     },
     {
-      test: /\.(png|jpg)$/,
+      test: /\.(png|jpg|svg)$/,
       use: 'url-loader?limit=15000',
       exclude: [/node_modules/]
-    },
-    {
-      test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      use: [
-        {
-          loader: 'url-loader',
-          options: {
-            limit: 10000,
-            mimetype: 'application/font-woff'
-          }
-        }
-      ]
-    },
-    {
-      test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-      use: [
-        { loader: 'file-loader' }
-      ]
     }
   ],
   plugins: [
