@@ -1,24 +1,24 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { ShellHeaderComponent } from '../components/shell-header.component';
-import { Application } from '../models/application.model';
 import { ApplicationState } from '../reducers/application.reducer';
 
-interface NavigationProps {
-  currentApplication: Application;
+export interface ShellNavigationContainerProps {
+  applicationTitle: string;
 }
 
-const Navigation: React.StatelessComponent<NavigationProps> = props => {
-  const {title} = props.currentApplication;
-
-  return (<ShellHeaderComponent applicationTitle={title} />);
+const Container: React.StatelessComponent<ShellNavigationContainerProps> = props => {
+  return (<ShellHeaderComponent {...props} />);
 };
 
 const mapStateToProps = (state: {application: ApplicationState}): Partial<{}> => ({
-  currentApplication: state.application.byId[state.application.selected]
+  // TODO: Should use a selector
+  applicationTitle: state.application.byId[state.application.selected]
+    ? state.application.byId[state.application.selected].title
+    : ''
 });
 
 const mapDispatchToProps = {
 };
 
-export const ShellHeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Navigation);
+export const ShellHeaderContainer = connect(mapStateToProps, mapDispatchToProps)(Container);
